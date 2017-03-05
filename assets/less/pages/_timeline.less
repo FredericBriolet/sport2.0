@@ -1,0 +1,132 @@
+/* @group TIMELINE */
+.timeline-container {
+  max-width: 80%;
+  margin: 0 auto;
+  width: 100%;
+
+  .timeline-title {
+    font-size: @72px;
+    color: @grey-dark;
+    border-top: 5px solid @grey-dark;
+    text-align: center;
+    width: 600px;
+    margin: 0 auto @192px;
+  }
+
+  .timeline-box {
+    font-size: 64px;
+    
+    /* 1em = 1day */
+    .timeline-month {
+      background-image: url('../assets/img/timeline-bg.svg');
+      background-position: center top;
+      background-repeat: repeat-y;
+      background-size: auto 1em;
+      position: relative;
+      &.timeline-september, 
+      &.timeline-november {
+        min-height: 30em;
+      }
+
+      &.timeline-october, 
+      &.timeline-december,
+      &.timeline-january,
+      &.timeline-march {
+        min-height: 31em;
+      }
+
+      &.timeline-february {
+        min-height: 28em;
+      }
+
+      .timeline-month-inner {
+        font-size: 16px;
+      }
+
+      .month-name {
+        position: absolute;
+        font-size: 10vw;
+        text-transform: lowercase;
+        left: 50%;
+        top: -100px;
+        opacity: 0.1;
+        transform: translateX(-50%) translateY(-30%);
+      }
+
+      .post {
+        position: absolute;
+        width: 40%;
+        overflow: visible;
+
+        &:before{
+          content: '';
+          width: 12vw;
+          height: 2px;
+          background-color: @grey-dark;
+          bottom: 100%;
+          position: absolute;
+        }
+        
+        &:nth-child(even) {
+          left: 60%;
+          text-align: left;
+          &:before{
+            right: 90%;
+          }
+
+          .post-image {
+            right: 120%;
+          }
+        }
+        &:nth-child(odd) {
+          right: 60%;
+          text-align: right;
+          &:before{
+            left: 90%;
+          }
+
+          .post-image {
+            left: 120%;
+          }
+        }
+
+        .post-description,
+        .post-url {
+          position: relative;
+        }
+
+        .post-description,
+        .post-url, 
+        .post-image {
+          opacity: 0;
+          background-color: #fefefe;
+          transition: opacity 0.7s @easeInOutQuint;
+        }
+
+        .post-name:hover ~ .post-description,
+        .post-name:hover ~ .post-url,
+        .post-date:hover ~ .post-description,
+        .post-date:hover ~ .post-url, 
+        .post-date:hover ~ .post-image,
+        .post-name:hover ~ .post-image {
+          opacity: 1;
+          z-index: 1;
+        }
+
+
+        .post-image {
+          height: 20vw;
+          width: 40vw;
+          bottom: 20%;
+          position: absolute;
+          z-index: -1;
+          background-size: cover;
+          background-position: center;
+        }
+
+      }
+
+    }
+  }
+}
+/* @end TIMELINE */
