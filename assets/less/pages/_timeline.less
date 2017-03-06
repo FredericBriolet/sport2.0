@@ -39,10 +39,6 @@
         min-height: 28em;
       }
 
-      .timeline-month-inner {
-        font-size: 16px;
-      }
-
       .month-name {
         position: absolute;
         font-size: 10vw;
@@ -57,6 +53,10 @@
         position: absolute;
         width: 40%;
         overflow: visible;
+
+        * {
+          font-size: 16px;
+        }
 
         &:before{
           content: '';
@@ -88,6 +88,10 @@
           .post-image {
             left: 120%;
           }
+        }
+
+        .post-name {
+          font-size: @18px
         }
 
         .post-description,
