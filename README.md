@@ -2,7 +2,7 @@
 
 ```sh
 # clone repo to local
-git clone https://github.com/baptistebriel/sport2.0.git
+git clone https://github.com/FredericBriolet/sport2.0.git
 
 # move into directory
 cd sport2.0
