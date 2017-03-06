@@ -1,6 +1,15 @@
 ## Getting Started
 
 ```sh
+# create database directory
+mkdir /database/parsed
+
+# create database
+npm run parse:all
+
+# new dasatet ?
+replace raw/timeline.csv by your timeline.csv file
+
 # clone repo to local
 git clone https://github.com/FredericBriolet/sport2.0.git
 
